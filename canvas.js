@@ -6,6 +6,9 @@ var isDrawing = false
 var firstPoint = { x : -1, y : -1}
 var lastPoint = { x : -1, y : -1}
 
+var thickneth = ctx.lineWidth
+console.log(thickneth)
+
 function mouseDragedListener(e) {
     if(mouseIsDown) {
         var point = getPoint(e.clientX, e.clientY)
@@ -15,19 +18,18 @@ function mouseDragedListener(e) {
 
 
 
-
         var tool = document.getElementById("tools").value
         if(tool == "1") {
             if(lastPoint.x == -1) {
                 lastPoint = getPoint(e.clientX, e.clientY)
             }
             ctx.beginPath()
-            ctx.save()
+            // ctx.save()
             ctx.lineWidth = 3
             ctx.moveTo(lastPoint.x, lastPoint.y);
             ctx.lineTo(point.x, point.y);
             ctx.stroke();
-            ctx.restore()
+            // ctx.restore()
 
             ctx.closePath()
             lastPoint = point
@@ -36,7 +38,7 @@ function mouseDragedListener(e) {
             
                 ctx.beginPath()
 
-                ctx.lineWidth = 0
+                ctx.lineWidth = thickneth
                 ctx.moveTo(firstPoint.x, firstPoint.y);
                 ctx.lineTo(point.x, point.y);
                 ctx.stroke();
