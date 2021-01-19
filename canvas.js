@@ -16,18 +16,18 @@ function mouseDragedListener(e) {
 
 
 
-
         var tool = document.getElementById("tools").value
         if(tool == "1") {
             if(lastPoint.x == -1) {
                 lastPoint = getPoint(e.clientX, e.clientY)
             }
             ctx.beginPath()
-
-            ctx.lineWidth = 2
+            ctx.save()
+            ctx.lineWidth = 8
             ctx.moveTo(lastPoint.x, lastPoint.y);
             ctx.lineTo(point.x, point.y);
             ctx.stroke();
+            ctx.restore()
 
             ctx.closePath()
             lastPoint = point
