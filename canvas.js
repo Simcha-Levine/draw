@@ -23,7 +23,7 @@ function mouseDragedListener(e) {
             }
             ctx.beginPath()
             ctx.save()
-            ctx.lineWidth = 8
+            ctx.lineWidth = 3
             ctx.moveTo(lastPoint.x, lastPoint.y);
             ctx.lineTo(point.x, point.y);
             ctx.stroke();
