@@ -1,0 +1,27 @@
+
+<body onmouseup="mouseUp()">
+    <canvas id="canvas" 
+    width="1000" 
+    height="700" 
+    onmousemove="mouseDragedListener(event)"
+    onmousedown="mouseDown(event), mouseDragedListener(event)"></canvas>
+
+    <select id="tools">
+        <option value="2">web</option>
+        <option value="1">pen</option>
+    </select>
+</body>
+
+
+<style>
+    canvas {
+        display: block;
+        margin: 0 auto;
+        outline: 100px auto rgb(0, 0, 0);
+    }
+
+    select {
+    }
+</style>
+
+<script src="canvas.js"></script>
